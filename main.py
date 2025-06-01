@@ -4,25 +4,13 @@ from flask import Flask, request
 app = Flask(__name__)
 
 @app.route("/", methods=["POST"])
-def hello_world_post():
+def super_minimal_post_test():
     """
-    Super minimal Flask app to test Cloud Run POST functionality.
-    It will just print confirmation of receiving a POST request.
+    Absolute bare-bones Flask app to test Cloud Run POST functionality.
+    It will just print a fixed string.
     """
-    print("--- DEBUG: Basic POST Request Received ---")
-    print(f"--- DEBUG: Request Headers: {request.headers} ---")
-    print(f"--- DEBUG: Request Method: {request.method} ---")
-
-    # Try to read raw data, but don't attempt JSON parsing yet
-    try:
-        raw_data = request.get_data()
-        print(f"--- DEBUG: Raw Request Data Length: {len(raw_data)} bytes ---")
-        # print(f"--- DEBUG: Raw Request Data: {raw_data.decode('utf-8')} ---") # Uncomment for full data if desired
-    except Exception as e:
-        print(f"--- DEBUG ERROR: Failed to get raw data: {e} ---")
-
-    print("--- DEBUG: Basic POST Request Processing Complete ---")
-    return "OK - Minimal Test Successful", 200 # Always return 200 OK
+    print("--- DEBUG: ULTRA BASIC POST RECEIVED ---") # Only print a fixed string
+    return "OK - Ultra Minimal Test", 200
 
 if __name__ == "__main__":
     # Run the Flask app. Cloud Run uses Gunicorn by default.
