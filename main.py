@@ -64,7 +64,7 @@ def process_pubsub_message():
                     "ingestion_timestamp": datetime.now(timezone.utc).isoformat(timespec='microseconds') + 'Z'
                 }
                 row_to_insert["eventType"] = message_json.get("eventType", None)
-                row_to_insert["data"] = json.dumps(message_json.get("data", {})) # Convert dict to JSON string for BigQuery JSON column
+                row_to_insert["data"] = message_json.get("data", {}) # Pass as Python dict for BigQuery JSON type column
                 row_to_insert["source"] = message_json.get("source", None)
 
                 raw_timestamp = message_json.get("timestamp", None)
