@@ -16,7 +16,7 @@ project_id = os.environ.get("GCP_PROJECT_ID", "wycfots-agbgagenticaihackat") # <
 bigquery_client = bigquery.Client(project=project_id)
 
 # Define your BigQuery table ID
-table_id = f"{project_id}.supply_chain_data.raw_events"
+table_id = f"{project_id}.supply_chain_data1.raw_events"
 
 @app.route("/", methods=["POST"])
 def process_pubsub_message():
