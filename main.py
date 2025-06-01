@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 app = Flask(__name__)
 
 # Initialize BigQuery client (outside the request handler for efficiency)
-project_id = os.environ.get("GCP_PROJECT_ID", "wycfotos-agbgagenticaihackat") # <<< REPLACE WITH YOUR_PROJECT_ID
+project_id = os.environ.get("GCP_PROJECT_ID", "wycfots-agbgagenticaihackat") # <<< REPLACE WITH YOUR_PROJECT_ID
 bigquery_client = bigquery.Client(project=project_id)
 
 # Define your BigQuery table ID
