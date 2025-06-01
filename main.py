@@ -15,7 +15,7 @@ app = Flask(__name__)
 # Initialize BigQuery client globally for efficiency
 project_id = os.environ.get("GCP_PROJECT_ID", "wycfots-agbgagenticaihackat") # <<< REPLACE WITH YOUR_PROJECT_ID
 bigquery_client = bigquery.Client(project=project_id)
-table_id = f"{project_id}.supply_chain_data1.raw_events" # <<< ENSURE THIS IS supply_chain_data1
+table_id = "wycfots-agbgagenticaihackat.supply_chain_data1.raw_events" # <<< ENSURE THIS IS supply_chain_data1
 
 @app.route("/", methods=["POST"])
 def process_pubsub_message():
